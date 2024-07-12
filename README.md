@@ -1,118 +1,115 @@
-### راهنمای نصب و استفاده از اسکریپت ربات اخبار تلگرام
+### Installation and Usage Guide for Telegram News Bot Script
 
-این راهنما شامل مراحل نصب و فعال‌سازی تا نحوه استفاده از اسکریپت ربات اخبار تلگرام می‌باشد.
+This guide covers the steps for installing, activating, and using the Telegram News Bot script.
 
-#### پیش‌نیازها
-1. **Python 3.x**: برای اجرای این اسکریپت نیاز به نصب پایتون نسخه 3 به بالا دارید.
-2. **Git**: برای دریافت فایل‌ها از مخزن GitHub نیاز به نصب Git دارید.
+#### Prerequisites
+1. **Python 3.x**: Ensure you have Python version 3 or higher installed.
+2. **Git**: Git is needed to clone the repository from GitHub.
 
-#### نصب Git
-برای نصب Git بر اساس سیستم‌عامل خود یکی از دستورات زیر را اجرا کنید:
+#### Installing Git
+Install Git according to your operating system:
 
-**برای اوبونتو/دبیان:**
+**For Ubuntu/Debian:**
 ```bash
 sudo apt update
 sudo apt install git
 ```
 
-**برای فدورا:**
+**For Fedora:**
 ```bash
 sudo dnf install git
 ```
 
-**برای مک (با استفاده از Homebrew):**
+**For macOS (using Homebrew):**
 ```bash
 brew install git
 ```
 
-**برای ویندوز:**
-1. به [صفحه دانلود Git](https://git-scm.com/download/win) بروید.
-2. فایل نصبی را دانلود و اجرا کنید.
+**For Windows:**
+1. Go to the [Git download page](https://git-scm.com/download/win).
+2. Download and run the installer.
 
-#### کلون کردن مخزن GitHub
-پس از نصب Git، باید مخزن `news_bot` را کلون کنید:
+#### Cloning the GitHub Repository
+After installing Git, clone the `news_bot` repository:
 
-1. **باز کردن ترمینال** (یا Git Bash در ویندوز).
-2. اجرای دستور زیر برای کلون کردن مخزن:
+1. **Open Terminal** (or Git Bash on Windows).
+2. Run the following command to clone the repository:
    ```bash
    git clone https://github.com/norouzigorji/news_bot.git
    ```
-3. به پوشه `news_bot` بروید:
+3. Navigate to the `news_bot` directory:
    ```bash
    cd news_bot
    ```
 
-#### نصب کتابخانه‌های مورد نیاز
-در همان پوشه `news_bot`، دستور زیر را اجرا کنید تا کتابخانه‌های مورد نیاز نصب شوند:
+#### Installing Required Libraries
+In the `news_bot` directory, run the following command to install the required libraries:
 ```bash
 pip install -r requirements.txt
 ```
 
-#### ایجاد ربات تلگرام
-1. به [BotFather](https://telegram.me/BotFather) بروید و یک ربات جدید ایجاد کنید.
-2. توکن (Token) ربات را دریافت کنید.
+#### Creating a Telegram Bot
+1. Go to [BotFather](https://telegram.me/BotFather) and create a new bot.
+2. Obtain the bot token.
 
-#### تنظیم مقادیر توکن و آیدی ادمین
-در پایان اسکریپت، قسمت `if __name__ == '__main__':` را پیدا کنید.
-اسکریپت را با استفاده از توکن ربات و آیدی عددی ادمین اجرا کنید:
+#### Setting the Bot Token and Admin ID
+In the script, locate the `if __name__ == '__main__':` section. Run the script with your bot token and admin ID:
 ```bash
 python news_bot.py <YOUR_BOT_TOKEN> <YOUR_ADMIN_ID>
 ```
-جایگزین `<YOUR_BOT_TOKEN>` و `<YOUR_ADMIN_ID>` به ترتیب با توکن ربات و آیدی عددی ادمین تلگرام خود.
+Replace `<YOUR_BOT_TOKEN>` and `<YOUR_ADMIN_ID>` with your bot token and your Telegram numeric admin ID, respectively.
 
-#### نحوه استفاده از ربات
-1. **شروع به کار ربات**:
-   پس از اجرای اسکریپت، ربات به صورت خودکار شروع به کار می‌کند.
-   
-2. **دستورات مدیریتی ربات**:
-   به عنوان ادمین، با ارسال دستور `/start` به ربات، منوی اصلی را مشاهده خواهید کرد که شامل گزینه‌های زیر است:
-   - افزودن کانال
-   - حذف کانال
-   - جستجوی کانال با نام
-   - نمایش اطلاعات کانال
+#### Using the Bot
+1. **Starting the Bot**:
+   After running the script, the bot will automatically start.
 
-3. **افزودن کانال**:
-   - در منوی اصلی گزینه "افزودن کانال" را انتخاب کنید.
-   - آیدی عددی کانال را وارد کنید.
-   - پس از وارد کردن آیدی کانال، گزینه‌های زیر نمایش داده می‌شود:
-     - افزودن ربات به کانال
-     - تنظیمات زمان
-     - تایید
-     - بازگشت
+2. **Admin Commands**:
+   As an admin, send the `/start` command to the bot to see the main menu, which includes the following options:
+   - Add Channel
+   - Delete Channel
+   - Search Channel by Name
+   - Show Channel Info
 
-4. **حذف کانال**:
-   - در منوی اصلی گزینه "حذف کانال" را انتخاب کنید.
-   - آیدی عددی کانال را وارد کنید تا کانال حذف شود.
+3. **Adding a Channel**:
+   - Select "Add Channel" in the main menu.
+   - Enter the numeric ID of the channel.
+   - After entering the channel ID, you will see the following options:
+     - Add Bot to Channel
+     - Set Time Interval
+     - Confirm
+     - Back
 
-5. **جستجوی کانال با نام**:
-   - در منوی اصلی گزینه "جستجوی کانال با نام" را انتخاب کنید.
-   - نام کانال را وارد کنید تا نتایج جستجو نمایش داده شود.
+4. **Deleting a Channel**:
+   - Select "Delete Channel" in the main menu.
+   - Enter the numeric ID of the channel to delete it.
 
-6. **نمایش اطلاعات کانال**:
-   - در منوی اصلی گزینه "نمایش اطلاعات کانال" را انتخاب کنید.
-   - آیدی عددی کانال را وارد کنید تا اطلاعات مربوط به کانال نمایش داده شود.
+5. **Searching for a Channel by Name**:
+   - Select "Search Channel by Name" in the main menu.
+   - Enter the channel name to display the search results.
 
-#### عملکرد اصلی ربات
+6. **Showing Channel Info**:
+   - Select "Show Channel Info" in the main menu.
+   - Enter the numeric ID of the channel to display its information.
 
-ربات به صورت خودکار و با توجه به زمان تنظیم شده برای هر کانال، آخرین اخبار موجود در وبسایت `bloghnews.com` را استخراج کرده و به کانال‌های تنظیم شده ارسال می‌کند. 
+#### Bot's Main Functionality
+The bot automatically fetches the latest news from the `bloghnews.com` website and sends it to the configured channels at the specified intervals.
 
-#### نحوه اجرای دائمی اسکریپت
+#### Running the Script Permanently
+To keep the script running even after closing the terminal, you can use service management tools like `systemd` (for Linux-based systems) or `pm2` (for Node and Python applications).
 
-برای اجرای دائمی اسکریپت و اطمینان از فعال بودن ربات حتی پس از بستن ترمینال، می‌توانید از ابزارهای مدیریت سرویس مانند `systemd` (در سیستم‌عامل‌های مبتنی بر لینوکس) یا `pm2` (برای نود و برنامه‌های پایتون) استفاده کنید.
-
-#### نمونه راه‌اندازی با `screen`:
+#### Example Setup with `screen`:
 ```bash
 screen -S news_bot
 python news_bot.py <YOUR_BOT_TOKEN> <YOUR_ADMIN_ID>
-# برای خروج از screen بدون متوقف کردن برنامه:
-Ctrl + A, سپس D
-# برای بازگشت به screen:
+# To detach from screen without stopping the program:
+Ctrl + A, then D
+# To reattach to the screen session:
 screen -r news_bot
 ```
 
-با اجرای مراحل بالا، ربات خبری شما به طور کامل نصب و راه‌اندازی شده و آماده خدمت‌رسانی خواهد بود.
+By following these steps, your news bot will be fully installed, configured, and ready to operate.
 
-**پروژه مشابه میخواهید؟**
-اگر هر گونه سوالی درباره این پروژه داشتید حتما در بخش issues درخواستتان را ارسال کنید.<br/>
-در صورت درخواست پروژه مشابه میتوانید با آیدی تلگرام من درتماس باشید : <br/>
-Telegram 🆔 : [@Norouzi_Gorji](https://t.me/Norouzi_Gorji)
+**Need a similar project?**<br/>
+If you have any questions about this project, feel free to post your request in the issues section. <br/>
+For similar projects, you can contact me on Telegram: <br/>
+Telegram 🆔: [@Norouzi_Gorji](https://t.me/Norouzi_Gorji)
